@@ -1,0 +1,20 @@
+{
+  "/api/products/*": {
+    "target": "http://localhost:8081",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/api/products": "/products"
+    }
+  },
+  "/api/inventory/*": {
+    "target": "http://localhost:8082",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/api/inventory": "/inventory"
+    }
+  }
+} 

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Products Frontend | Juan José Ariza V.</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Frontend Angular para microservicios de productos e inventario">
+  <meta name="author" content="Juan José Ariza V.">
+  <meta name="keywords" content="Angular, Microservicios, Productos, Inventario, Frontend">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  
+  <style>
+    /* Loading spinner inicial */
+    .loading-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .loading-spinner {
+      border: 4px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 4px solid #3498db;
+      width: 40px;
+      height: 40px;
+      animation: spin 2s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .loading-text {
+      color: white;
+      margin-top: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <app-root>
+    <!-- Loading fallback mientras carga Angular -->
+    <div class="loading-container">
+      <div class="text-center">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">
+          <div>Cargando Products Frontend...</div>
+          <small style="opacity: 0.8; font-size: 14px;">Desarrollado por Juan José Ariza V.</small>
+        </div>
+      </div>
+    </div>
+  </app-root>
+  
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

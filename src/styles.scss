@@ -1,0 +1,398 @@
+/**
+ * Estilos globales del Frontend Angular
+ * Para microservicios de productos e inventario
+ * Desarrollado por Juan José Ariza V.
+ */
+
+/* Variables CSS personalizadas */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --info-color: #17a2b8;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+  
+  --border-radius: 8px;
+  --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Reset y estilos base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--dark-color);
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 10px;
+}
+
+/* Contenedor principal */
+.main-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+/* Componentes personalizados */
+.card-custom {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.btn-custom {
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  transition: var(--transition);
+  border: none;
+  
+  &.btn-primary {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    
+    &:hover {
+      background: linear-gradient(45deg, #0056b3, #004085);
+      transform: translateY(-1px);
+    }
+  }
+  
+  &.btn-success {
+    background: linear-gradient(45deg, #28a745, #1e7e34);
+    
+    &:hover {
+      background: linear-gradient(45deg, #1e7e34, #155724);
+      transform: translateY(-1px);
+    }
+  }
+  
+  &.btn-warning {
+    background: linear-gradient(45deg, #ffc107, #e0a800);
+    
+    &:hover {
+      background: linear-gradient(45deg, #e0a800, #d39e00);
+      transform: translateY(-1px);
+    }
+  }
+  
+  &.btn-danger {
+    background: linear-gradient(45deg, #dc3545, #c82333);
+    
+    &:hover {
+      background: linear-gradient(45deg, #c82333, #bd2130);
+      transform: translateY(-1px);
+    }
+  }
+}
+
+/* Loading spinner personalizado */
+.loading-spinner-custom {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: text-bottom;
+  border: 0.25em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spinner-border 0.75s linear infinite;
+}
+
+@keyframes spinner-border {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Estados de carga */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  
+  .loading-content {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    
+    .spinner {
+      width: 3rem;
+      height: 3rem;
+      border: 0.3rem solid #f3f3f3;
+      border-top: 0.3rem solid var(--primary-color);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    .loading-text {
+      margin-top: 1rem;
+      color: var(--secondary-color);
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Alertas personalizadas */
+.alert-custom {
+  border: none;
+  border-radius: var(--border-radius);
+  border-left: 4px solid;
+  
+  &.alert-success {
+    border-left-color: var(--success-color);
+    background: rgba(40, 167, 69, 0.1);
+  }
+  
+  &.alert-danger {
+    border-left-color: var(--danger-color);
+    background: rgba(220, 53, 69, 0.1);
+  }
+  
+  &.alert-warning {
+    border-left-color: var(--warning-color);
+    background: rgba(255, 193, 7, 0.1);
+  }
+  
+  &.alert-info {
+    border-left-color: var(--info-color);
+    background: rgba(23, 162, 184, 0.1);
+  }
+}
+
+/* Tablas responsivas */
+.table-custom {
+  background: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  
+  thead th {
+    background: linear-gradient(45deg, var(--primary-color), #0056b3);
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-weight: 600;
+  }
+  
+  tbody tr {
+    transition: var(--transition);
+    
+    &:hover {
+      background-color: rgba(0, 123, 255, 0.05);
+    }
+    
+    td {
+      padding: 1rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+  }
+}
+
+/* Paginación personalizada */
+.pagination-custom {
+  .page-link {
+    border: none;
+    border-radius: var(--border-radius);
+    margin: 0 0.25rem;
+    padding: 0.75rem 1rem;
+    color: var(--primary-color);
+    transition: var(--transition);
+    
+    &:hover {
+      background-color: var(--primary-color);
+      color: white;
+      transform: translateY(-1px);
+    }
+    
+    &.active {
+      background-color: var(--primary-color);
+      color: white;
+    }
+  }
+}
+
+/* Formularios */
+.form-control-custom {
+  border: 2px solid #e9ecef;
+  border-radius: var(--border-radius);
+  padding: 0.75rem;
+  transition: var(--transition);
+  
+  &:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+}
+
+/* Navbar personalizada */
+.navbar-custom {
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  box-shadow: var(--box-shadow);
+  
+  .navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    
+    .brand-highlight {
+      color: #ffc107;
+    }
+  }
+}
+
+/* Cards de productos */
+.product-card {
+  transition: var(--transition);
+  border: none;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .product-image {
+    height: 200px;
+    background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-color);
+    font-size: 3rem;
+  }
+  
+  .product-info {
+    padding: 1.5rem;
+    
+    .product-price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--success-color);
+    }
+    
+    .product-stock {
+      &.in-stock {
+        color: var(--success-color);
+      }
+      
+      &.low-stock {
+        color: var(--warning-color);
+      }
+      
+      &.out-of-stock {
+        color: var(--danger-color);
+      }
+    }
+  }
+}
+
+/* Utilidades */
+.text-gradient {
+  background: linear-gradient(45deg, var(--primary-color), #6610f2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shadow-custom {
+  box-shadow: var(--box-shadow) !important;
+}
+
+.border-radius-custom {
+  border-radius: var(--border-radius) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding: 0.5rem;
+  }
+  
+  .product-card {
+    margin-bottom: 1rem;
+  }
+  
+  .table-custom {
+    font-size: 0.875rem;
+    
+    thead th,
+    tbody td {
+      padding: 0.5rem;
+    }
+  }
+}
+
+/* Estados de error */
+.error-state {
+  text-align: center;
+  padding: 3rem;
+  color: var(--secondary-color);
+  
+  .error-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+  }
+  
+  .error-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .error-message {
+    font-size: 1rem;
+    opacity: 0.8;
+  }
+}
+
+/* Estados vacíos */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--secondary-color);
+  
+  .empty-icon {
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.3;
+  }
+  
+  .empty-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .empty-message {
+    font-size: 1.1rem;
+    opacity: 0.7;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+  }
+} 
