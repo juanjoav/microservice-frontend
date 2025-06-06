@@ -337,7 +337,7 @@ npm run build
 
 Proyecto desarrollado como parte de prueba técnica.
 **Autor:** Juan José Ariza V.
-**Año:** 2024
+**Año:** 2025
 
 ---
 
